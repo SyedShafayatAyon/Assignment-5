@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- daisy ui & tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#F8FAFC]">
+    <header>
+        <nav class="bg-white">
+            <div class="navbar bg-base-100 shadow-sm flex justify-between px-20">
+                <div class="">
+                    <a class="text-2xl font-semibold flex justify-center items-center gap-1"><img
+                            src="B13-A5-Github-Issue-Tracker/assets/github-logo_25231 1.png" alt="">
+                        GitHub Issues
+                        Tracker</a>
+                </div>
+                <div class="space-x-4">
+                    <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="w-9/12 mx-auto mt-16 p-6 bg-white rounded-lg shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
+            <button id="allBtn" onclick="allIssue()" class="active btn btn-primary">All</button>
+            <button id="openBtn" class="active btn btn-primary">Open</button>
+            <button id="closedBtn" class="active btn btn-primary">Closed</button>
+        </section>
+
+        <section class="mt-4 ">
+            <div class="w-9/12 p-6 mx-auto bg-white border-1 border-black flex justify-between">
+                <div class=" rounded-lg flex items-center gap-2">
+                    <img src="B13-A5-Github-Issue-Tracker/assets/Group 1.png" alt="">
+                    <div>
+                        <h3 class="text-[20px] font-semibold"><span id="numOfIssue"></span> Issues</h3>
+                        <p class="text-[#64748B]">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+
+                <div class="flex gap-4">
+                    <div class="flex justify-center items-center gap-2">
+                        <div class="rounded-full bg-[#00A96E] size-3"></div>
+                        <p>Open</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2">
+                        <div class="rounded-full bg-[#A855F7] size-3"></div>
+                        <p>Closed</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>

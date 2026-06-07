@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <!-- daisy ui & tailwind link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-[#F8FAFC] h-screen flex justify-center items-center">
+    <div class="bg-white shadow-[0px_5px_10px_rgba(0,0,0,0.08)] p-8 border-[#E4E4E7]  rounded-lg space-y-6">
+        <div>
+            <img class="mx-auto" src="B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
+            <h3 class="text-center font-semibold text-2xl mt-6">GitHub Issues Tracker</h3>
+            <p class="text-center text-[#64748B] ">Sign in to manage your issues</p>
+        </div>
+        <div class="space-y-10">
+            <label class="font-medium" for="">Username</label><br>
+            <input id="userName" class="w-[456px] p-4 border-[#E4E4E7] rounded-lg" type="text"
+                placeholder="Enter Username"><br>
+            <label class="font-medium" for="">Password</label><br>
+            <input id="password" class="w-[456px] p-4 border-[#E4E4E7] rounded-lg" type="Password"
+                placeholder="Enter Password"><br>
+            <button id="signIn" class="btn btn-primary w-[456px] ">Sign In</button>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
