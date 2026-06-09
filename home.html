@@ -43,15 +43,16 @@
         </nav>
     </header>
 
-    <main>
-        <section class="w-9/12 mx-auto mt-16 p-6 bg-white rounded-lg shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
+    <main class="w-9/12 mx-auto mt-16">
+        <section class="p-6 bg-white rounded-lg shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
             <button id="allBtn" onclick="allIssue()" class="active btn btn-primary">All</button>
             <button id="openBtn" class="active btn btn-primary">Open</button>
             <button id="closedBtn" class="active btn btn-primary">Closed</button>
         </section>
 
-        <section class="mt-4 ">
-            <div class="w-9/12 p-6 mx-auto bg-white border-1 border-black flex justify-between">
+        <section class="mt-4">
+            <div
+                class="p-6 bg-white shadow-[0px_1px_6px_rgba(0,0,0,0.08)] border-b-1 border-b-[#E4E4E7] flex justify-between">
                 <div class=" rounded-lg flex items-center gap-2">
                     <img src="B13-A5-Github-Issue-Tracker/assets/Group 1.png" alt="">
                     <div>
@@ -71,6 +72,42 @@
                         <p>Closed</p>
                     </div>
                 </div>
+            </div>
+
+            <div id="allIssueContainer" class="p-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="p-4 bg-white rounded-md">
+                    <div class="  space-y-3 pb-4">
+                        <div class="flex justify-between items-center">
+                            <img src="B13-A5-Github-Issue-Tracker/assets/Closed- Status .png" alt="">
+                            <button
+                                class="bg-[#FEECEC] px-7 py-2 rounded-[100px] text-[#EF4444]  text-xs font-medium ">Hign</button>
+                        </div>
+                        <h5 class="text-[14px] font-semibold">Fix navigation menu on mobile devices</h5>
+                        <p class="text-[#64748B] text-xs">The navigation menu doesn't collapse properly on mobile
+                            devices...
+                        </p>
+                        <div class="flex gap-1 flex-wrap">
+                            <button
+                                class="flex justify-center items-center gap-1 px-4 py-1 bg-[#FECACA] rounded-[100px] text-[#EF4444] text-xs font-medium">
+                                <img src="B13-A5-Github-Issue-Tracker/assets/BugDroid.png" alt="">BUG
+                            </button>
+
+                            <button
+                                class="flex justify-center items-center gap-1 px-4 py-1 bg-[#FDE68A] rounded-[100px] text-[#D97706] text-xs font-medium ">
+                                <img src="B13-A5-Github-Issue-Tracker/assets/Lifebuoy.png" alt="">HELP WANTED
+                            </button>
+                        </div>
+                        <hr class="-mx-4 border-0 border-t-2 border-[#E4E4E7]">
+                    </div>
+
+                    <div class="space-y-2">
+                        <p class="text-[#64748B] text-xs">#1 by john_doe</p>
+                        <p class="text-[#64748B] text-xs">1/15/2024</p>
+                    </div>
+
+                </div>
+
+
             </div>
 
         </section>
