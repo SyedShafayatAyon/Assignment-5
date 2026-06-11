@@ -33,19 +33,26 @@ const displayAllIssue = (issues) => {
   //     }
 
   issues.forEach((issue) => {
-    console.log(issue.status);
+    const borderColor =
+      issue.status === "open"
+        ? "border-t-4 border-[#00A96E]"
+        : "border-t-4 border-[#A855F7]";
+
+    const borderImg =
+      issue.status === "open"
+        ? `<img src="B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">`
+        : `<img src="B13-A5-Github-Issue-Tracker/assets/Closed-Status.png" alt="">`;
+
+    issue.labels.forEach((item) => console.log(item));
+
     const issueCard = document.createElement("div");
     issueCard.innerHTML = `
     
-    <div class="p-4 bg-white rounded-md border-2 border-black">
+    <div class="p-4 bg-white rounded-md h-full shadow-[0px_1px_6px_rgba(0,0,0,0.08)] ${borderColor}">
                     <div class="  space-y-3 pb-4">
                         <div class="flex justify-between items-center">
 
-                          ${
-                            issue.status === "open"
-                              ? `<img src="B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">`
-                              : `<img src="B13-A5-Github-Issue-Tracker/assets/Closed- Status .png" alt="">`
-                          }
+                          ${borderImg}
 
                           ${
                             issue.priority === "high"
@@ -61,22 +68,42 @@ const displayAllIssue = (issues) => {
                         <p class="text-[#64748B] text-xs">${issue.description}
                         </p>
                         <div class="flex gap-1 flex-wrap">
-                            <button
+                        ${issue.labels.map((label) =>
+                          label === "bug"
+                            ? ` <button
                                 class="flex justify-center items-center gap-1 px-4 py-1 bg-[#FECACA] rounded-[100px] text-[#EF4444] text-xs font-medium">
                                 <img src="B13-A5-Github-Issue-Tracker/assets/BugDroid.png" alt="">BUG
-                            </button>
-
-                            <button
+                            </button> `
+                            : label === "help wanted"
+                              ? `<button
                                 class="flex justify-center items-center gap-1 px-4 py-1 bg-[#FDE68A] rounded-[100px] text-[#D97706] text-xs font-medium ">
                                 <img src="B13-A5-Github-Issue-Tracker/assets/Lifebuoy.png" alt="">HELP WANTED
-                            </button>
+                            </button>`
+                              : label == "enhancement"
+                                ? `<button
+                                class="flex justify-center items-center gap-1 px-4 py-1 bg-[#DEFCE8] rounded-[100px] text-[#00A96E] text-xs font-medium ">
+                                <img src="B13-A5-Github-Issue-Tracker/assets/Sparkle.png" alt="">
+                                ENHANCEMENT  
+                            </button>`
+                                : label == "documentation"
+                                  ? `<button
+                                class="flex justify-center items-center gap-1 px-4 py-1 bg-slate-300 rounded-[100px] text-[#] text-xs font-medium ">
+                                <img src="B13-A5-Github-Issue-Tracker/assets/folder.png" alt="">
+                                DOCUMENTATION
+                            </button>`
+                                  : `<button
+                                class="flex justify-center items-center gap-1 px-4 py-1 bg-[#FDE68A] rounded-[100px] text-[#D97706] text-xs font-medium ">
+                                <img src="B13-A5-Github-Issue-Tracker/assets/Lifebuoy.png" alt="">
+                                GOOD FIRST ISSUE
+                            </button>`,
+                        )}
                         </div>
                         <hr class="-mx-4 border-0 border-t-2 border-[#E4E4E7]">
                     </div>
 
                     <div class="space-y-2">
-                        <p class="text-[#64748B] text-xs">#1 by john_doe</p>
-                        <p class="text-[#64748B] text-xs">1/15/2024</p>
+                        <p class="text-[#64748B] text-xs">#${issue.id} by ${issue.author}</p>
+                        <p class="text-[#64748B] text-xs">${issue.createdAt.split("T")[0]}</p>
                     </div>
 
                 </div>
