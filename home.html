@@ -46,8 +46,8 @@
     <main class="w-9/12 mx-auto mt-16">
         <section class="p-6 bg-white rounded-lg shadow-[0px_1px_6px_rgba(0,0,0,0.08)] space-x-2">
             <button id="allBtn" onclick="allIssue()" class="active btn btn-primary">All</button>
-            <button id="openBtn" class="active btn btn-primary">Open</button>
-            <button id="closedBtn" class="active btn btn-primary">Closed</button>
+            <button id="openBtn" onclick="openIssue()" class="active btn btn-primary">Open</button>
+            <button id="closedBtn" onclick="closeIssue()" class="active btn btn-primary">Closed</button>
         </section>
 
         <section class="mt-4">
@@ -79,7 +79,6 @@
             </div>
 
             <!-- Open the modal using ID.showModal() method -->
-            <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
             <dialog id="issueModal" class="modal">
                 <div class="modal-box">
 

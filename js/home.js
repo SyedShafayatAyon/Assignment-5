@@ -176,3 +176,25 @@ const displayIssueDetail = (issue) => {
   `;
   document.getElementById("issueModal").showModal();
 };
+
+const openIssue = () => {
+  const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => {
+      const openIssues = json.data.filter((issue) => issue.status === "open");
+      displayAllIssue(openIssues);
+    });
+};
+
+const closeIssue = () => {
+  const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => {
+      const closeIssues = json.data.filter(
+        (label) => label.status === "closed",
+      );
+      displayAllIssue(closeIssues);
+    });
+};
