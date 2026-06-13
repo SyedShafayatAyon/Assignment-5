@@ -52,7 +52,7 @@
 
         <section class="mt-4">
             <div
-                class="p-6 bg-white shadow-[0px_1px_6px_rgba(0,0,0,0.08)] border-b-1 border-b-[#E4E4E7] flex justify-between">
+                class="p-6 bg-white shadow-[0px_1px_6px_rgba(0,0,0,0.08)] border-b-1 border-b-[#E4E4E7] flex justify-between flex-wrap ">
                 <div class=" rounded-lg flex items-center gap-2">
                     <img src="B13-A5-Github-Issue-Tracker/assets/Group 1.png" alt="">
                     <div>
@@ -78,6 +78,23 @@
 
             </div>
 
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+            <dialog id="issueModal" class="modal">
+                <div class="modal-box">
+
+                    <div id="issueDetails">
+
+                    </div>
+
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn btn-primary focus:outline-none">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </section>
     </main>
 
