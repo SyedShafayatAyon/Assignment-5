@@ -3,6 +3,15 @@ const openBtn = document.getElementById("openBtn");
 const closedBtn = document.getElementById("closedBtn");
 
 const allIssue = () => {
+  const clickedBtn = allBtn;
+  clickedBtn.classList.add("active");
+
+  if (openBtn.classList.contains("active")) {
+    openBtn.classList.remove("active");
+  } else if (closedBtn.classList.contains("active")) {
+    closedBtn.classList.remove("active");
+  }
+
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((response) => response.json())
@@ -178,6 +187,15 @@ const displayIssueDetail = (issue) => {
 };
 
 const openIssue = () => {
+  const clickedBtn = openBtn;
+  clickedBtn.classList.add("active");
+
+  if (allBtn.classList.contains("active")) {
+    allBtn.classList.remove("active");
+  } else if (closedBtn.classList.contains("active")) {
+    closedBtn.classList.remove("active");
+  }
+
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((response) => response.json())
@@ -188,6 +206,15 @@ const openIssue = () => {
 };
 
 const closeIssue = () => {
+  const clickedBtn = closedBtn;
+  clickedBtn.classList.add("active");
+
+  if (allBtn.classList.contains("active")) {
+    allBtn.classList.remove("active");
+  } else if (openBtn.classList.contains("active")) {
+    openBtn.classList.remove("active");
+  }
+
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((response) => response.json())
