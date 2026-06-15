@@ -1,6 +1,7 @@
 const allBtn = document.getElementById("allBtn");
 const openBtn = document.getElementById("openBtn");
 const closedBtn = document.getElementById("closedBtn");
+const searchBtn = document.getElementById("searchBtn");
 
 const manageSpinner = (status) => {
   if (status == true) {
@@ -179,7 +180,7 @@ const displayIssueDetail = (issue) => {
 
           <p class="text-[#64748B]">${issue.description}</p>
 
-          <div class="bg-[#F8FAFC] p-4 flex gap-50">
+          <div class="bg-[#F8FAFC] p-4 flex justify-between md:gap-50">
               <div>
                   <h5 class="text-[#64748B]">Assignee:</h5>
                   <p class="font-semibold">${issue.assignee === "" ? "Unassigned" : issue.assignee}</p>
@@ -245,4 +246,14 @@ const closeIssue = () => {
       displayAllIssue(closeIssues);
       manageSpinner(false);
     });
+};
+
+const searchIssue = () => {
+  const searchedIssue = document.getElementById("searchIssue");
+  const searchedIssueValue = searchedIssue.value;
+
+  const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchedIssueValue}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => displayAllIssue(json.data));
 };
